@@ -1,0 +1,15 @@
+.about {
+  width: 100vw;
+  h2 {
+    font-size: $font-basic;
+    margin-bottom: 1rem;
+    font-variant: all-small-caps;
+    letter-spacing: 0.3rem;
+    font-weight: $font-bold;
+    color: $black;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

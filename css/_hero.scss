@@ -1,0 +1,17 @@
+.hero {
+  position: relative;
+  left: 0; //going to move left to shift pictures in animation
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  &__item {
+    &__picture {
+      img {
+        width: 100vw;
+        height: auto;
+      }
+    }
+    &__text {
+    }
+  }
+}

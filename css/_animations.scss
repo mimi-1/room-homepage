@@ -1,0 +1,41 @@
+//class for all elements that should be hidden or visible
+.has-fade {
+  visibility: hidden;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0; //for fading effect
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: hidden;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}
