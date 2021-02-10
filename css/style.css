@@ -221,6 +221,7 @@ button,
   display: inline-block;
   color: #454545;
   border: none;
+  outline: none;
   background-color: white;
 }
 
@@ -243,12 +244,28 @@ p {
   padding-bottom: 3.24rem;
 }
 
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none !important;
+  }
+}
+
 .attribution {
   display: none;
 }
 
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
 .header {
-  border: solid green;
   position: absolute;
   top: 0;
   left: 0;
@@ -261,7 +278,8 @@ p {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  padding: 3rem 1.875rem;
+  padding-top: 2rem;
+  padding-left: 1.875rem;
   width: 100vw;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -271,28 +289,37 @@ p {
           align-items: center;
 }
 
-.header.open .header__hamburger {
-  background: url(../images/icon-close.svg);
-}
-
-.header__hamburger {
+.header .button,
+.header button {
   display: block;
   width: 1.5rem;
   height: 1.125rem;
   text-indent: -9999px;
   background: url(../images/icon-hamburger.svg);
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   -webkit-transition: background-image 300ms ease-in-out;
   transition: background-image 300ms ease-in-out;
   -webkit-transition: height 300ms ease-in-out;
   transition: height 300ms ease-in-out;
+}
+
+.header.open .header__nav {
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+
+.header__toggle {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
 }
 
+.header__toggle .button {
+  background: url(../images/icon-hamburger.svg);
+}
+
 .header__logo {
-  border: solid red;
   -webkit-box-flex: 90%;
       -ms-flex: 90%;
           flex: 90%;
@@ -304,6 +331,59 @@ p {
   height: auto;
 }
 
+.header__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  visibility: hidden;
+}
+
+.header__nav__links {
+  background-color: white;
+  width: 100%;
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(4rem + 10vw);
+}
+
+.header__nav__links__close .button {
+  background: url(../images/icon-close.svg);
+  background-repeat: no-repeat;
+}
+
+.header__nav__links ul {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.header__nav__links {
+  background-color: white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a1a1a1), to(transparent));
+  background-image: linear-gradient(#a1a1a1, transparent);
+}
+
 main {
   position: absolute;
   top: 0;
@@ -313,20 +393,66 @@ main {
 
 .hero {
   position: relative;
-  left: 0;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
-.hero__item__picture img {
+.hero__articles {
+  position: relative;
+  left: 0;
+}
+
+.hero__articles__item__picture img {
   width: 100vw;
-  height: auto;
+  height: 96vw;
+}
+
+.hero__navigation {
+  position: absolute;
+  font-size: 0;
+  left: calc(100vw - 3.4375rem * 2 - 0.5rem);
+  top: calc(96vw - 3.4375rem);
+  background-color: black;
+  width: calc(3.4375rem * 2 + 0.5rem);
+}
+
+.hero__navigation button {
+  background-color: inherit;
+  background-color: black;
+  height: 3.4375rem;
+  width: 3.4375rem;
+}
+
+.hero__navigation button svg path {
+  stroke: #a1a1a1;
+  -webkit-transition: stroke 40ms ease-in-out;
+  transition: stroke 40ms ease-in-out;
+}
+
+.hero__navigation button:hover svg path {
+  stroke: white;
+}
+
+.cfa {
+  padding-top: 0px;
+}
+
+.cfa button {
+  width: 14.4375rem;
+  font-variant: all-small-caps;
+  font-size: 16px;
+  letter-spacing: 0.6rem;
+  text-align: left;
+  background-image: url(../images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  -webkit-transition: -webkit-transform 10s ease-in-out;
+  transition: -webkit-transform 10s ease-in-out;
+  transition: transform 10s ease-in-out;
+  transition: transform 10s ease-in-out, -webkit-transform 10s ease-in-out;
+}
+
+.cfa button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .about {

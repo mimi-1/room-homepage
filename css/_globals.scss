@@ -44,6 +44,7 @@ button,
   display: inline-block;
   color: $veryDarkGray;
   border: none;
+  outline: none;
   background-color: $white;
   &:hover {
     cursor: pointer;
@@ -63,20 +64,26 @@ p {
   padding-top: 3.6875rem;
   padding-bottom: 3.24rem;
 }
-// .hide-for-mobile {
-//   //hide for tablet and mobile devices
-//   @include breakpoint-down(medium) {
-//     display: none;
-//   }
-// }
 
-// .hide-for-desktop {
-//   //hide for desktop
-//   @include breakpoint-up(large) {
-//     display: none !important;
-//   }
-// }
+.hide-for-mobile {
+  //hide for tablet and mobile devices
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  //hide for desktop
+  @include breakpoint-up(large) {
+    display: none !important;
+  }
+}
 
 .attribution {
   display: none;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999px;
 }

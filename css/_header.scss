@@ -1,41 +1,44 @@
 .header {
   //header is open for menu in mobile design
-  border: solid green;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  padding: 3rem 1.875rem;
-  width: 100vw;
-  justify-content: space-between;
-
-  align-items: center;
-
-  &.open {
-    .header__hamburger {
-      background: url(../images/icon-close.svg);
-      // width: 19px;
-      // height: 18px;
-    }
-  }
-
-  // mobile menu hamburger
-  &__hamburger {
+  & .button,
+  button {
     display: block;
     width: 1.5rem;
     height: 1.125rem;
     text-indent: -9999px;
     background: url(../images/icon-hamburger.svg);
     background-size: 100% 100%;
+    background-repeat: no-repeat;
     transition: background-image 300ms ease-in-out;
     transition: height 300ms ease-in-out;
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  padding-top: 2rem;
+  padding-left: 1.875rem;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+
+  &.open {
+    .header__nav {
+      animation: fade-in 300ms ease-in-out forwards;
+    }
+  }
+
+  &__toggle {
     order: -1;
-    //flex: auto;
+    .button {
+      background: url(../images/icon-hamburger.svg);
+    }
   }
   &__logo {
-    border: solid red;
     flex: 90%;
     text-align: center;
     a {
@@ -46,12 +49,43 @@
     }
   }
 
-  // nav {
-  //   position: relative;
-  //   background-color: $white;
-  //   padding-top: 1.0625rem;
-  //   padding-bottom: 1.0625rem;
-  // }
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    //for mobile it is hidden
+    visibility: hidden;
+    &__links {
+      background-color: $white;
+      width: 100%;
+      padding-top: 2rem;
+      display: flex;
+      //align-items: center;
+
+      //112 height for 375  width mobile design
+      //iPhone X	1125 x 2436	375 x 812
+      //3px=1vw
+      //94px = 4rem+10vw(64px+30px) looks better
+      height: calc(4rem + 10vw);
+      &__close {
+        .button {
+          background: url(../images/icon-close.svg);
+          background-repeat: no-repeat;
+        }
+      }
+      ul {
+        width: 80%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+    &__links {
+      background-color: $white;
+    }
+  }
 }
 
 // &__links {
@@ -110,12 +144,12 @@
 //   }
 // }
 
-// .overlay {
-//   position: fixed;
-//   top: 0px;
-//   right: 0px;
-//   bottom: 0px;
-//   left: 0px;
-//   //fallback color gradient
-//   background-image: linear-gradient($darkBlue, transparent);
-// }
+.overlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  //fallback color gradient
+  background-image: linear-gradient($darkGray, transparent);
+}

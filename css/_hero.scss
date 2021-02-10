@@ -1,17 +1,48 @@
 .hero {
   position: relative;
-  left: 0; //going to move left to shift pictures in animation
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  &__item {
-    &__picture {
-      img {
-        width: 100vw;
-        height: auto;
+  &__articles {
+    position: relative;
+    left: 0; //going to move left to shift pictures in animation
+    &__item {
+      &__picture {
+        img {
+          width: 100vw;
+          //width: max-content;
+          height: 96vw;
+        }
+      }
+      &__text {
       }
     }
-    &__text {
+  }
+
+  &__navigation {
+    position: absolute;
+    font-size: 0; //to remove space between buttons
+    left: calc(100vw - 3.4375rem * 2 - 0.5rem);
+    top: calc(96vw - 3.4375rem);
+    background-color: $black;
+    width: calc(3.4375rem * 2 + 0.5rem);
+
+    button {
+      background-color: inherit;
+      background-color: $black;
+      height: 3.4375rem;
+      width: 3.4375rem;
+      svg {
+        path {
+          stroke: $darkGray;
+          transition: stroke 40ms ease-in-out;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
     }
   }
 }
