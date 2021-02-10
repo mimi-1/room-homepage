@@ -30,6 +30,9 @@
     .header__nav {
       animation: fade-in 300ms ease-in-out forwards;
     }
+    html {
+      overflow-y: hidden;
+    }
   }
 
   &__toggle {
@@ -60,6 +63,7 @@
       background-color: $white;
       width: 100%;
       padding-top: 2rem;
+      padding-bottom: 0px;
       display: flex;
       //align-items: center;
 
@@ -80,13 +84,21 @@
         flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-evenly;
+        li a {
+          font-weight: $font-semi-bold;
+          color: $black;
+        }
       }
     }
-    &__links {
-      background-color: $white;
+    &__overlay {
+      display: block;
+      height: 100vh;
+      background-color: $black;
+      overflow-y: hidden;
+      opacity: 0.6;
     }
-  }
-}
+  } // end of nav
+} //end of header
 
 // &__links {
 //   //setting links for mobile

@@ -309,6 +309,10 @@ p {
           animation: fade-in 300ms ease-in-out forwards;
 }
 
+.header.open html {
+  overflow-y: hidden;
+}
+
 .header__toggle {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
@@ -343,6 +347,7 @@ p {
   background-color: white;
   width: 100%;
   padding-top: 2rem;
+  padding-bottom: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,8 +375,17 @@ p {
           justify-content: space-evenly;
 }
 
-.header__nav__links {
-  background-color: white;
+.header__nav__links ul li a {
+  font-weight: 600;
+  color: black;
+}
+
+.header__nav__overlay {
+  display: block;
+  height: 100vh;
+  background-color: black;
+  overflow-y: hidden;
+  opacity: 0.6;
 }
 
 .overlay {
