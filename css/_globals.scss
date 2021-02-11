@@ -3,6 +3,9 @@
 html {
   font-size: $font-basic;
   overflow-x: hidden; //no scrolling horizontally
+  &.noscroll {
+    overflow: hidden;
+  }
 }
 
 *,
@@ -16,9 +19,6 @@ body {
   font-size: $font-size;
   line-height: 1.3;
   color: $darkGray;
-  &.noscroll {
-    overflow: hidden;
-  }
 }
 
 //text

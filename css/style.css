@@ -181,6 +181,10 @@ html {
   overflow-x: hidden;
 }
 
+html.noscroll {
+  overflow: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -193,10 +197,6 @@ body {
   font-size: 0.75rem;
   line-height: 1.3;
   color: #a1a1a1;
-}
-
-body.noscroll {
-  overflow: hidden;
 }
 
 h1,
@@ -295,13 +295,6 @@ p {
   width: 1.5rem;
   height: 1.125rem;
   text-indent: -9999px;
-  background: url(../images/icon-hamburger.svg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  -webkit-transition: background-image 300ms ease-in-out;
-  transition: background-image 300ms ease-in-out;
-  -webkit-transition: height 300ms ease-in-out;
-  transition: height 300ms ease-in-out;
 }
 
 .header.open .header__nav {
@@ -320,7 +313,9 @@ p {
 }
 
 .header__toggle .button {
-  background: url(../images/icon-hamburger.svg);
+  background: url("../images/icon-hamburger.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .header__logo {
@@ -355,7 +350,8 @@ p {
 }
 
 .header__nav__links__close .button {
-  background: url(../images/icon-close.svg);
+  background: url("../images/icon-close.svg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 

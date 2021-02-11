@@ -6,13 +6,9 @@
     width: 1.5rem;
     height: 1.125rem;
     text-indent: -9999px;
-    background: url(../images/icon-hamburger.svg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    transition: background-image 300ms ease-in-out;
-    transition: height 300ms ease-in-out;
   }
 
+  //transition: all 300s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
@@ -37,9 +33,12 @@
 
   &__toggle {
     order: -1;
-    .button {
-      background: url(../images/icon-hamburger.svg);
-    }
+    @include set-btn-img("../images/icon-hamburger.svg");
+    // .button {
+    //   // background: url(../images/icon-hamburger.svg);
+    //   // background-size: 100% 100%;
+    //   // background-repeat: no-repeat;
+    // }
   }
   &__logo {
     flex: 90%;
@@ -73,10 +72,11 @@
       //94px = 4rem+10vw(64px+30px) looks better
       height: calc(4rem + 10vw);
       &__close {
-        .button {
-          background: url(../images/icon-close.svg);
-          background-repeat: no-repeat;
-        }
+        @include set-btn-img("../images/icon-close.svg");
+        // .button {
+        //   background: url(../images/icon-close.svg);
+        //   background-repeat: no-repeat;
+        // }
       }
       ul {
         width: 80%;
