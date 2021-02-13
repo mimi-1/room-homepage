@@ -1,7 +1,3 @@
-@media (min-width: 64em) {
-  //styles go here
-}
-
 //font-size:16
 
 $breakpoints-up: (
@@ -47,9 +43,9 @@ $breakpoints-down: (
   padding-top: 0px;
 }
 
-// @mixin margin-reset() {
-//   margin-top: 0px;
-//   margin-bottom: 0px;
-//   margin-left: 0px;
-//   margin-right: 0px;
-// }
+@mixin margin-reset() {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
