@@ -1,5 +1,17 @@
 .about {
   width: 100vw;
+  @include breakpoint-up(large) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    .container {
+      padding-bottom: 0;
+      padding-top: 0;
+      align-self: center;
+    }
+  }
+
   h2 {
     font-size: $font-basic;
     margin-bottom: 1rem;
@@ -8,8 +20,13 @@
     font-weight: $font-bold;
     color: $black;
   }
+
   img {
     width: 100%;
     height: auto;
+    @include breakpoint-up(large) {
+      width: 29vw;
+      height: auto;
+    }
   }
 }
