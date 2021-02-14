@@ -1,22 +1,38 @@
 .hero {
-  position: relative;
+  //hero sections: articles, navigation, cta
+
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: 58.4% auto;
+    grid-template-rows: auto auto 4rem;
+    gap: 0;
+  }
+
   &__articles {
-    position: relative;
-    left: 0; //going to move left to shift pictures in animation
+    //width: 100%;
+    @include breakpoint-up(large) {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 3;
+      justify-self: stretch;
+      align-self: stretch;
+    }
     &__item {
       @include breakpoint-up(large) {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        display: grid;
+        gap: 0;
+        grid-template-columns: 58.4% auto;
       }
+
       &__picture {
-        flex: 58.4%;
+        //width: 100%;
+        @include breakpoint-up(large) {
+          grid-column: 1;
+        }
         img {
           margin: 0;
-          width: 100vw;
-          height: 96vw;
+          width: 100%;
+          height: auto;
           @include breakpoint-up(large) {
-            width: 100%;
             height: 100%;
           }
         }
@@ -25,8 +41,9 @@
         box-sizing: content-box;
         width: auto;
         height: auto;
-        flex: 40%;
-        width: 100%;
+        @include breakpoint-up(large) {
+          grid-column: 2;
+        }
       }
     }
   }
@@ -39,8 +56,11 @@
     top: calc(96vw - 3.4375rem);
     width: calc(3.4375rem * 2 + 0.5rem);
     @include breakpoint-up(large) {
-      left: 56.3%;
-      top: 88%;
+      position: static;
+      grid-row: 3;
+      grid-column: 2;
+      justify-self: stretch;
+      align-self: stretch;
     }
     button {
       background-color: inherit;
@@ -66,9 +86,12 @@
   &__cfa {
     padding-top: 0px;
     @include breakpoint-up(large) {
-      position: absolute;
-      left: 58%;
-      top: calc(20rem - 5vw);
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      grid-row: 2;
+      grid-column: 2;
+      align-self: start;
+      justify-self: center;
     }
     button {
       width: 14.4375rem;
