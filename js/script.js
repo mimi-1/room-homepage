@@ -17,19 +17,18 @@ closeMenuBtn.addEventListener("click", function () {
 });
 
 const btnLeft = document.querySelector("#left");
-const heroItems = document.querySelectorAll(".hero__articles__item");
-const heroItemsLastIndex = heroItems.length - 1;
+const articles = document.querySelectorAll(".articles__item");
+const itemsLastIndex = articles.length - 1;
 
 btnLeft.addEventListener("click", () => {
   //set the item which is visible hidden and  previouse item visible
   //if it is first item, make the last item visible
-  //  index = heroItems.values()
-  const index = Array.from(heroItems).findIndex(
+
+  const index = Array.from(articles).findIndex(
     (item) => !item.classList.contains("hidden")
   );
-  const item = heroItems[index];
-  const prevItem =
-    index > 0 ? heroItems[index - 1] : heroItems[heroItemsLastIndex];
+  const item = articles[index];
+  const prevItem = index > 0 ? articles[index - 1] : articles[itemsLastIndex];
   item.classList.add("hidden");
   prevItem.classList.remove("hidden");
 });
@@ -37,12 +36,11 @@ btnLeft.addEventListener("click", () => {
 const btnRight = document.querySelector("#right");
 
 btnRight.addEventListener("click", () => {
-  const index = Array.from(heroItems).findIndex(
+  const index = Array.from(articles).findIndex(
     (item) => !item.classList.contains("hidden")
   );
-  const item = heroItems[index];
-  const nextItem =
-    index < heroItemsLastIndex ? heroItems[index + 1] : heroItems[0];
+  const item = articles[index];
+  const nextItem = index < itemsLastIndex ? articles[index + 1] : articles[0];
   item.classList.add("hidden");
   nextItem.classList.remove("hidden");
 });
