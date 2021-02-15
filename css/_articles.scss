@@ -1,0 +1,79 @@
+.articles {
+  width: 100%;
+  &__item {
+    @include breakpoint-up(large) {
+      display: grid;
+      gap: 0;
+      grid-template-columns: 58.4vw auto;
+    }
+    &__picture {
+      width: 100%;
+      @include breakpoint-up(large) {
+        grid-column: 1;
+      }
+      img {
+        margin: 0;
+        width: 100vw;
+        height: auto;
+        @include breakpoint-up(large) {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    &__text {
+      @include breakpoint-up(large) {
+        grid-column: 2;
+      }
+      button {
+        width: 14.4375rem;
+        font-variant: all-small-caps;
+        font-size: $font-basic;
+        letter-spacing: 0.6rem;
+        text-align: left;
+        background-image: url(../images/icon-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        transition: transform 10s ease-in-out;
+        margin-top: 2rem;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  &__navigation {
+    font-size: 0;
+    position: absolute;
+    top: calc(96.3vw - 3.4375rem);
+    left: calc(100% - 6.875rem);
+
+    @include breakpoint-up(large) {
+      //top: calc(37.53vw - 3.4375rem);
+      top: calc(37.53vw - 3.5rem);
+      // position: relative;
+      // height: 0;
+      // bottom: 0;
+      left: 58.4vw;
+    }
+    button {
+      background-color: inherit;
+      background-color: $black;
+      height: 3.4375rem;
+      width: 3.4375rem;
+      svg {
+        path {
+          stroke: $darkGray;
+          transition: stroke 40ms ease-in-out;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+}
