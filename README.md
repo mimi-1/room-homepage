@@ -1,6 +1,8 @@
 # Frontend Mentor challange - Room homepage
 [Frontend Mentor](https://www.frontendmentor.io)
 
+Site is published at [github](https://mimi-1.github.io/room-homepage/)
+
 ![Design preview for the Room homepage coding challenge](./design/desktop-preview.jpg)
 
 Things  done:
