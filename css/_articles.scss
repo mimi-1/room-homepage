@@ -51,9 +51,6 @@
     @include breakpoint-up(large) {
       //top: calc(37.53vw - 3.4375rem);
       top: calc(37.53vw - 3.5rem);
-      // position: relative;
-      // height: 0;
-      // bottom: 0;
       left: 58.4vw;
     }
     button {
@@ -61,6 +58,9 @@
       background-color: $black;
       height: 3.4375rem;
       width: 3.4375rem;
+      @include breakpoint-up(large) {
+        width: 6vw;
+      }
       svg {
         path {
           stroke: $darkGray;

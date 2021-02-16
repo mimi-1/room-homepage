@@ -530,6 +530,12 @@ p {
   width: 3.4375rem;
 }
 
+@media (min-width: 64em) {
+  .articles__navigation button {
+    width: 6vw;
+  }
+}
+
 .articles__navigation button svg path {
   stroke: #a1a1a1;
   -webkit-transition: stroke 40ms ease-in-out;
