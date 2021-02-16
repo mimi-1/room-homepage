@@ -20,10 +20,9 @@ const btnLeft = document.querySelector("#left");
 const articles = document.querySelectorAll(".articles__item");
 const itemsLastIndex = articles.length - 1;
 
-btnLeft.addEventListener("click", () => {
+const scrollLeft = () => {
   //set the item which is visible hidden and  previouse item visible
   //if it is first item, make the last item visible
-
   const index = Array.from(articles).findIndex(
     (item) => !item.classList.contains("hidden")
   );
@@ -31,11 +30,12 @@ btnLeft.addEventListener("click", () => {
   const prevItem = index > 0 ? articles[index - 1] : articles[itemsLastIndex];
   item.classList.add("hidden");
   prevItem.classList.remove("hidden");
-});
+};
 
 const btnRight = document.querySelector("#right");
 
-btnRight.addEventListener("click", () => {
+btnLeft.addEventListener("click", scrollLeft);
+const scrollRight = () => {
   const index = Array.from(articles).findIndex(
     (item) => !item.classList.contains("hidden")
   );
@@ -43,4 +43,14 @@ btnRight.addEventListener("click", () => {
   const nextItem = index < itemsLastIndex ? articles[index + 1] : articles[0];
   item.classList.add("hidden");
   nextItem.classList.remove("hidden");
+};
+
+btnRight.addEventListener("click", scrollRight);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    scrollLeft();
+  } else if (event.key === "ArrowRight") {
+    scrollRight();
+  }
 });
